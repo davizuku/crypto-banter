@@ -34,7 +34,8 @@ class Agent:
         prompt = f"You are an expert community manager of a top voice in the crypto world.\
             Write a post for {channel} about {topic} using the style {style}. Keep your tone {tone}.\
             The post will be published on {date}, adapt the post to the date, if relevant.\
-            Keep your post limited to at most {maxWords} words."
+            Keep your post limited to at most {maxWords} words.\
+            Return only the text of the post ready to copy-and-paste on the platform, do not add the date of the post."
         post = self.llm.complete(prompt=prompt)
         # TODO: generate image for the post using multi-modal model, if channel allows it.
 
